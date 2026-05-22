@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* Gilroy and Denton Fonts from CRED CDN */
+@font-face {
+  font-family: "Gilroy";
+  src: url("https://web-assets.cred.club/v2/_next/assets/fonts/Gilroy-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("https://web-assets.cred.club/v2/_next/assets/fonts/Gilroy-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("https://web-assets.cred.club/v2/_next/assets/fonts/Gilroy-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("https://web-assets.cred.club/v2/_next/assets/fonts/Gilroy-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("https://web-assets.cred.club/v2/_next/assets/fonts/Gilroy-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Denton";
+  src: url("https://web-assets.cred.club/v2/_next/assets/fonts/Denton-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Denton";
+  src: url("https://web-assets.cred.club/v2/_next/assets/fonts/Denton-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Denton";
+  src: url("https://web-assets.cred.club/v2/_next/assets/fonts/Denton-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Denton";
+  src: url("https://web-assets.cred.club/v2/_next/assets/fonts/Denton-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Denton";
+  src: url("https://web-assets.cred.club/v2/_next/assets/fonts/Denton-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Gilroy", "Inter", sans-serif;
+  --font-serif: "Denton", "Playfair Display", serif;
+  
+  --color-cred-black: #000000;
+  --color-cred-muted: rgba(255, 255, 255, 0.4);
+  --color-cred-green: #00e676;
+  --color-cred-green-dark: #00c853;
+  --color-cred-teal: #00e5ff;
+  --color-cred-light-bg: #f8f9fa;
+  --color-cred-dark-gray: #0d0d0d;
+}
+
+/* Custom Base Styles */
+@layer base {
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #333333;
+  }
+}
+
+/* Neomorphic and Neon Glow utilities */
+@layer utilities {
+  .neon-glow-green {
+    box-shadow: 0 0 40px rgba(0, 230, 118, 0.25);
+  }
+  .neon-glow-teal {
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.25);
+  }
+  .neon-text-green {
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.5);
+  }
+  
+  /* Neopop card style */
+  .neopop-card {
+    background: #000000;
+    border: 1px solid #1a1a1a;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .neopop-card:hover {
+    border-color: #00e676;
+    box-shadow: 4px 4px 0px #00e676;
+    transform: translate(-4px, -4px);
+  }
+  
+  /* Neopop card blue style */
+  .neopop-card-teal {
+    background: #000000;
+    border: 1px solid #1a1a1a;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .neopop-card-teal:hover {
+    border-color: #00e5ff;
+    box-shadow: 4px 4px 0px #00e5ff;
+    transform: translate(-4px, -4px);
+  }
+
+  /* Glassmorphism */
+  .glassmorphic {
+    background: rgba(13, 13, 13, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Scroll Animation Keyframes & classes */
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+.animate-neon-pulse {
+  animation: neonPulse 8s infinite ease-in-out;
+}
