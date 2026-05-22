@@ -47,7 +47,7 @@ export default function ScoreChecker() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/waitlist/apply', {
+      const response = await fetch('https://zuntra-oonr.onrender.com/api/waitlist/apply', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
